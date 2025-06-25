@@ -37,9 +37,9 @@ def train_step(model:torch.nn.Module,
     return train_loss,train_acc
 
 
-def test_step(model:nn.Module,
+def test_step(model:torch.nn.Module,
               dataloader:torch.utils.data.DataLoader,
-              loss_fn:nn.Module,
+              loss_fn:torch.nn.Module,
               optimizer:torch.optim.Optimizer,
               device:torch.device)->Tuple[float,float]:
     model.eval()
@@ -65,10 +65,10 @@ def test_step(model:nn.Module,
     return test_loss,test_acc
 
 
-def train(model:nn.Module,
+def train(model:torch.nn.Module,
           train_loader:torch.utils.data.DataLoader,
           test_loader:torch.utils.data.DataLoader,
-          loss_fn:nn.Module,
+          loss_fn:torch.nn.Module,
           optimizer:torch.optim.Optimizer,
           epochs:int,
           device:torch.device
